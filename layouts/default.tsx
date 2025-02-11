@@ -1,5 +1,11 @@
+import { Button } from '#components'
+
 export default defineComponent({
   render() {
-    return <div>Hello</div>
+    return (
+      <div>
+        <Button>Hello</Button>
+      </div>
+    )
   }
 })

@@ -28,6 +28,7 @@
     "tsc": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
+    "@ark-ui/vue": "^4.8.0",
     "nuxt": "^3.15.4",
     "vue": "latest",
     "vue-router": "latest"
@@ -38,6 +39,7 @@
     "@commitlint/config-conventional": "^19.7.1",
     "@commitlint/types": "^19.5.0",
     "@nuxt/eslint": "^1.0.1",
+    "@nuxt/kit": "^3.15.4",
     "@pandacss/dev": "^0.53.0",
     "@park-ui/panda-preset": "^0.43.1",
     "eslint": "^9.20.0",
