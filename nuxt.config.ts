@@ -4,8 +4,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   nitro: {
-    preset: "cloudflare_module"
+    preset: 'cloudflare_module'
   },
 
-  modules: ["nitro-cloudflare-dev"]
+  modules: ['nitro-cloudflare-dev', '@nuxt/eslint'],
+  imports: {
+    dirs: ['.nuxt/components.d.ts']
+  }
 })
