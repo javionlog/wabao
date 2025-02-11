@@ -1,8 +1,19 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "wabao",
+  "version": "0.0.1",
   "type": "module",
+  "author": {
+    "name": "javionlog"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "navigation site",
+    "private deployment"
+  ],
+  "description": "A resource navigation site that supports private deployment.",
   "scripts": {
+    "prepare": "husky && panda codegen",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -10,8 +21,11 @@
     "postinstall": "nuxt prepare",
     "deploy": "pnpm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "eslint": "eslint --fix **/*.{js,jsx,ts,tsx}",
+    "prettier": "prettier --write **/*.{js,jsx,ts,tsx,json,md,css}",
+    "lint-staged": "lint-staged --config ./lint-staged.config.js",
+    "panda": "panda codegen",
+    "tsc": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "nuxt": "^3.15.4",
@@ -20,11 +34,22 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250204.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "@commitlint/types": "^19.5.0",
     "@nuxt/eslint": "^1.0.1",
+    "@pandacss/dev": "^0.53.0",
+    "@park-ui/panda-preset": "^0.43.1",
     "eslint": "^9.20.0",
     "h3": "^1.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "nitro-cloudflare-dev": "^0.2.1",
     "nitropack": "^2.10.4",
+    "postcss": "^8.5.2",
+    "postcss-load-config": "^6.0.1",
+    "prettier": "^3.5.0",
+    "typescript": "^5.7.3",
     "wrangler": "^3.107.3"
   }
 }
