@@ -1,6 +1,13 @@
-import { styled } from 'styled-system/jsx'
-import { button } from 'styled-system/recipes'
-import type { ComponentProps } from 'styled-system/types'
+import { button, type ButtonVariantProps } from 'styled-system/recipes'
 
-export type ButtonProps = ComponentProps<typeof Button>
-export const Button = styled('button', button)
+export type ButtonProps = ButtonVariantProps
+
+export const Button = defineComponent((props: ButtonProps, { slots }) => {
+  return () => {
+    return (
+      <button class={button({ size: props.size ?? 'md', variant: props.variant ?? 'solid' })}>
+        {slots.default?.()}
+      </button>
+    )
+  }
+})

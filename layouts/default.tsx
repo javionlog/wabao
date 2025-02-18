@@ -4,7 +4,7 @@ export default defineComponent({
   render() {
     return (
       <div>
-        <Button>Hello</Button>
+        <Button>你好</Button>
       </div>
     )
   }
