@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
+    output: { dir: resolve('./dist') }
   },
   modules: ['nitro-cloudflare-dev', '@nuxt/eslint'],
   alias: {
