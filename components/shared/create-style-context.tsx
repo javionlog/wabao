@@ -1,13 +1,7 @@
+import type { FunctionalComponent } from 'vue'
+
 import { styled } from 'styled-system/jsx'
 import type { ElementType } from 'styled-system/types'
-import {
-  type ComputedRef,
-  type FunctionalComponent,
-  computed,
-  defineComponent,
-  inject,
-  provide
-} from 'vue'
 
 type Props = Record<string, unknown>
 type Recipe = {
@@ -64,3 +58,5 @@ export const createStyleContext = <R extends Recipe>(recipe: R) => {
 
   return { withProvider, withContext }
 }
+
+export default createStyleContext
