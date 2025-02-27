@@ -13,7 +13,7 @@
   ],
   "description": "A resource navigation site that supports private deployment.",
   "scripts": {
-    "prepare": "husky && panda codegen",
+    "prepare": "husky",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
@@ -24,7 +24,6 @@
     "eslint": "eslint --fix **/*.{js,ts,vuex}",
     "prettier": "prettier --write **/*.{js,ts,vue,css,json,md}",
     "lint-staged": "lint-staged --config ./lint-staged.config.js",
-    "panda": "panda codegen",
     "tsc": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
