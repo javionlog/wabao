@@ -1,4 +1,4 @@
 export default {
-  '*.{js,jsx,ts,tsx}': ['eslint --fix', () => 'tsc --noEmit --skipLibCheck', 'prettier --write'],
-  '*.{css,json,md}': ['prettier --write']
+  '*.{js,ts,vue}': ['eslint --fix', () => 'tsc --noEmit --skipLibCheck', 'prettier --write'],
+  '*.{vue,css,json,md}': ['prettier --write']
 }

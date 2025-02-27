@@ -21,16 +21,18 @@
     "postinstall": "nuxt prepare",
     "deploy": "pnpm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
-    "eslint": "eslint --fix **/*.{js,jsx,ts,tsx}",
-    "prettier": "prettier --write **/*.{js,jsx,ts,tsx,json,md,css}",
+    "eslint": "eslint --fix **/*.{js,ts,vuex}",
+    "prettier": "prettier --write **/*.{js,ts,vue,css,json,md}",
     "lint-staged": "lint-staged --config ./lint-staged.config.js",
     "panda": "panda codegen",
     "tsc": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@ark-ui/vue": "^4.8.0",
+    "@primeuix/themes": "^1.0.0",
     "lucide-vue-next": "^0.476.0",
     "nuxt": "^3.15.4",
+    "nuxt-i18n-micro": "^1.76.3",
+    "primevue": "^4.3.1",
     "vue": "latest",
     "vue-router": "latest"
   },
@@ -41,8 +43,7 @@
     "@commitlint/types": "^19.5.0",
     "@nuxt/eslint": "^1.0.1",
     "@nuxt/kit": "^3.15.4",
-    "@pandacss/dev": "^0.53.0",
-    "@park-ui/panda-preset": "^0.43.1",
+    "@primevue/nuxt-module": "^4.3.1",
     "eslint": "^9.20.0",
     "eslint-plugin-import": "^2.31.0",
     "h3": "^1.15.0",
@@ -55,5 +56,6 @@
     "typescript": "^5.7.3",
     "vue-component-type-helpers": "^2.2.2",
     "wrangler": "^3.107.3"
-  }
+  },
+  "packageManager": "pnpm@8.9.2+sha1.5f2fa48d614263457cf5d7fb7be8b878da318d87"
 }
