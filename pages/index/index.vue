@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex items-center justify-center gap-4">
     <span>{{ $t('app.meta.title') }}</span>
     <Select
       v-model="activeLocale"
@@ -8,12 +8,12 @@
       option-value="code"
       @change="handleChange"
     />
+    <Button @click="handleSwitch">切换主题</Button>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { SelectChangeEvent } from 'primevue'
-
 const { $t, $switchLocale, $getLocale, $getLocales } = useI18n()
 const activeLocale = ref($getLocale())
 const localeOptions = computed(() => {
@@ -26,5 +26,9 @@ useHead({
 
 const handleChange = (event: SelectChangeEvent) => {
   $switchLocale(event.value)
+}
+
+const handleSwitch = () => {
+  document.documentElement.classList.toggle('app-dark')
 }
 </script>
