@@ -1,7 +1,17 @@
 import { createResolver } from '@nuxt/kit'
+import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import PrimeUI from 'tailwindcss-primeui'
 const { resolve } = createResolver(import.meta.url)
+
+const MyPreset = definePreset(Aura, {
+  semantic: {
+    colorScheme: {
+      light: {},
+      dark: {}
+    }
+  }
+})
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -15,7 +25,9 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
     'nuxt-i18n-micro',
-    '@primevue/nuxt-module'
+    '@primevue/nuxt-module',
+    '@pinia/nuxt',
+    'nuxt-lucide-icons'
   ],
   typescript: {
     // typeCheck: true
@@ -33,7 +45,7 @@ export default defineNuxtConfig({
       { code: 'zh', iso: 'zh-CN', dir: 'ltr', label: '中文' },
       { code: 'en', iso: 'en-US', dir: 'ltr', label: 'English' }
     ],
-    defaultLocale: 'zh',
+    defaultLocale: 'en',
     translationDir: 'locales',
     meta: true,
     types: true,
@@ -52,7 +64,7 @@ export default defineNuxtConfig({
   primevue: {
     options: {
       theme: {
-        preset: Aura,
+        preset: MyPreset,
         options: {
           prefix: 'p',
           darkModeSelector: '.app-dark',
@@ -60,5 +72,11 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  pinia: {
+    storesDirs: ['./stores/**']
+  },
+  lucide: {
+    namePrefix: 'Icon'
   }
 })

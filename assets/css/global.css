@@ -3,3 +3,9 @@ body {
   font-size: 14px;
   line-height: 1.2;
 }
+
+.app-dark {
+  .logo {
+    filter: invert(1);
+  }
+}

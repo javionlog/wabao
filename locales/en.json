@@ -2,6 +2,11 @@
   "app": {
     "meta": {
       "title": "Wabao"
+    },
+    "category": {
+      "home": "Home",
+      "ai": "AI",
+      "program": "Program"
     }
   }
 }

@@ -2,6 +2,11 @@
   "app": {
     "meta": {
       "title": "挖宝"
+    },
+    "category": {
+      "home": "首页",
+      "ai": "人工智能",
+      "program": "编程"
     }
   }
 }

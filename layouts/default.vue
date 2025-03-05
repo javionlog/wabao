@@ -1,8 +1,12 @@
 <template>
   <div class="app">
-    <header class="header">头部</header>
+    <header class="header">
+      <LayoutHeader />
+    </header>
     <main class="main">
-      <aside class="left">侧边栏</aside>
+      <aside class="left">
+        <LayoutSidebar />
+      </aside>
       <div class="middle">
         <NuxtPage />
       </div>
@@ -11,7 +15,8 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({ name: 'layout' })
+import LayoutHeader from './layout-header/index.vue'
+import LayoutSidebar from './layout-sidebar/index.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -25,11 +30,9 @@ definePageMeta({ name: 'layout' })
   min-height: calc(100vh - 4rem);
   .left {
     width: 20rem;
-    background: lightblue;
   }
   .middle {
     flex: 1 0 0;
-    background: lightcoral;
   }
 }
 </style>
