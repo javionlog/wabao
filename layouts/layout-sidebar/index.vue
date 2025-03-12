@@ -1,39 +1,29 @@
 <template>
-  <div class="h-full w-full">
-    <Menu :model="items" class="h-full">
-      <template #item="{ item, props }">
-        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-          <a v-ripple :href="href" v-bind="props.action" @click="navigate">
-            <span :class="item.icon" />
-            <span class="ml-2">{{ item.label }}</span>
-          </a>
-        </router-link>
-        <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-          <span :class="item.icon" />
-          <span class="ml-2">{{ item.label }}</span>
-        </a>
-      </template>
-    </Menu>
+  <div v-if="isXs">
+    <Drawer
+      v-model:visible="drawerVisible"
+      :show-close-icon="false"
+      :pt="{
+        header: { style: 'display:none;' },
+        content: { style: 'padding:0;' }
+      }"
+      ><AppMenu
+    /></Drawer>
+    <Button class="!fixed bottom-4 left-4" @click="handleToggle"><IconMenu :size="16" /></Button>
+  </div>
+  <div v-else class="h-full w-full">
+    <AppMenu />
   </div>
 </template>
 
 <script setup>
-const { $t } = useI18n()
-const items = computed(() => [
-  {
-    label: $t('app.category.home'),
-    icon: 'pi pi-home',
-    route: '/'
-  },
-  {
-    label: $t('app.category.ai'),
-    icon: 'pi pi-palette',
-    route: '/ai'
-  },
-  {
-    label: $t('app.category.program'),
-    icon: 'pi pi-link',
-    route: '/program'
-  }
-])
+import AppMenu from './app-menu.vue'
+
+const { isXs } = useScreens()
+
+const drawerVisible = ref(false)
+
+const handleToggle = () => {
+  drawerVisible.value = !drawerVisible.value
+}
 </script>

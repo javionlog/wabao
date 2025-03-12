@@ -4,7 +4,7 @@
       <LayoutHeader />
     </header>
     <main class="main">
-      <aside class="left">
+      <aside>
         <LayoutSidebar />
       </aside>
       <div class="middle">
@@ -28,9 +28,6 @@ import LayoutSidebar from './layout-sidebar/index.vue'
 .main {
   display: flex;
   min-height: calc(100vh - 4rem);
-  .left {
-    width: 20rem;
-  }
   .middle {
     flex: 1 0 0;
   }

@@ -1,10 +1,9 @@
 <template>
   <div>
-    <Button
-      :icon="`pi ${themeStore.isDark ? 'pi-moon' : 'pi-sun'}`"
-      severity="secondary"
-      @click="handleSwitchTheme"
-    />
+    <Button severity="secondary" @click="handleSwitchTheme">
+      <IconMoon v-if="themeStore.isDark" :size="16" />
+      <IconSun v-else :size="16" />
+    </Button>
   </div>
 </template>
 

@@ -1,3 +1,11 @@
 <template>
-  <div class="flex items-center justify-center gap-4">{{ $t('app.meta.title') }}</div>
+  <div>{{ $t('app.category.home') }}</div>
 </template>
+
+<script setup lang="ts">
+const { $t } = useI18n()
+
+definePageMeta({
+  title: 'app.category.home'
+})
+</script>

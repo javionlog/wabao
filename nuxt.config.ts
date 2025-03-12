@@ -2,6 +2,8 @@ import { createResolver } from '@nuxt/kit'
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import PrimeUI from 'tailwindcss-primeui'
+
+import { SCREENS } from './shared/constants'
 const { resolve } = createResolver(import.meta.url)
 
 const MyPreset = definePreset(Aura, {
@@ -21,12 +23,13 @@ export default defineNuxtConfig({
     output: { dir: resolve('./dist') }
   },
   modules: [
-    'nitro-cloudflare-dev',
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    'nuxt-i18n-micro',
     '@primevue/nuxt-module',
     '@pinia/nuxt',
+    '@vueuse/nuxt',
+    'nitro-cloudflare-dev',
+    'nuxt-i18n-micro',
     'nuxt-lucide-icons'
   ],
   typescript: {
@@ -57,7 +60,10 @@ export default defineNuxtConfig({
     },
     config: {
       plugins: [PrimeUI],
-      darkMode: ['class', '.app-dark']
+      darkMode: ['class', '.app-dark'],
+      theme: {
+        screens: SCREENS
+      }
     }
   },
   css: ['primeicons/primeicons.css', '@/assets/css/global.css'],
