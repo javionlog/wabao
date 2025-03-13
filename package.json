@@ -27,7 +27,6 @@
     "tsc": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.16.0",
     "@primevue/forms": "^4.3.2",
     "@vueuse/core": "^13.0.0",
     "clsx": "^2.1.1",

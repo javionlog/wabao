@@ -1,10 +1,8 @@
-import { createResolver } from '@nuxt/kit'
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import PrimeUI from 'tailwindcss-primeui'
 
 import { SCREENS } from './shared/constants'
-const { resolve } = createResolver(import.meta.url)
 
 const MyPreset = definePreset(Aura, {
   semantic: {
@@ -20,7 +18,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   nitro: {
     preset: 'cloudflare-pages',
-    output: { dir: resolve('./dist') }
+    output: { dir: './dist' }
   },
   modules: [
     '@nuxt/eslint',
