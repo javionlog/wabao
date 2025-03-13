@@ -18,21 +18,21 @@
 <script setup>
 import { IconHouse, IconBot, IconCode } from '#components'
 
-const { $t } = useI18n()
+const { t } = useI18n()
 
 const items = computed(() => [
   {
-    label: $t('app.category.home'),
+    label: t('app.category.home'),
     icon: IconHouse,
     route: '/'
   },
   {
-    label: $t('app.category.ai'),
+    label: t('app.category.ai'),
     icon: IconBot,
     route: '/ai'
   },
   {
-    label: $t('app.category.program'),
+    label: t('app.category.program'),
     icon: IconCode,
     route: '/program'
   }

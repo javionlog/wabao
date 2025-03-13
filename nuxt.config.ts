@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nitro-cloudflare-dev',
     'nuxt-i18n-micro',
-    'nuxt-lucide-icons'
+    'nuxt-lucide-icons',
+    'pinia-plugin-persistedstate/nuxt'
   ],
   typescript: {
     // typeCheck: true
@@ -79,6 +80,10 @@ export default defineNuxtConfig({
   },
   pinia: {
     storesDirs: ['./stores/**']
+  },
+  piniaPluginPersistedstate: {
+    storage: 'localStorage',
+    debug: true
   },
   lucide: {
     namePrefix: 'Icon'

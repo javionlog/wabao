@@ -1,11 +1,13 @@
 <template>
-  <div>{{ $t('app.category.home') }}</div>
+  <div>{{ title }}</div>
 </template>
 
 <script setup lang="ts">
-const { $t } = useI18n()
+const { $getPageTitle } = useNuxtApp()
+const { t } = useI18n()
 
-definePageMeta({
-  title: 'app.category.home'
+const title = computed(() => $getPageTitle(t('app.category.home')))
+useHead({
+  title
 })
 </script>
