@@ -32,6 +32,7 @@ export const useScreens = () => {
 
   return {
     breakpoint,
+    isMobile: computed(() => ['xs', 'sm'].includes(breakpoint.value)),
     isXs: computed(() => breakpoint.value === 'xs'),
     isSm: computed(() => breakpoint.value === 'sm'),
     isMd: computed(() => breakpoint.value === 'md'),

@@ -54,9 +54,6 @@ export default defineNuxtConfig({
     strategy: 'no_prefix'
   },
   tailwindcss: {
-    editorSupport: {
-      autocompleteUtil: { as: 'tailwindClasses' }
-    },
     config: {
       plugins: [PrimeUI],
       darkMode: ['class', '.app-dark'],

@@ -6,7 +6,7 @@
 const { $getPageTitle } = useNuxtApp()
 const { t } = useI18n()
 
-const title = computed(() => $getPageTitle(t('app.category.home')))
+const title = computed(() => $getPageTitle(t('app.category.home') as string))
 useHead({
   title
 })

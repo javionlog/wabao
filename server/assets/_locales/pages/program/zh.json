@@ -1,1 +1,32 @@
-{}
+{
+  "program": {
+    "tabs": {
+      "frontend": {
+        "label": "前端",
+        "children": {
+          "java_script": {
+            "label": "JavaScript",
+            "children": {
+              "lodash": {
+                "label": "Lodash",
+                "desc": "Lodash 是一个一致性、模块化、高性能的 JavaScript 实用工具库。"
+              },
+              "rxjs": {
+                "label": "RxJs",
+                "desc": "RxJS 是一个使用可观察序列编写异步和基于事件的程序的库。"
+              },
+              "mathjs": {
+                "label": "Math.js",
+                "desc": "Math.js 是一个用于JavaScript 和 Node.js 的广泛数学库。"
+              },
+              "date_fns": {
+                "label": "date-fns",
+                "desc": "date-fns 为在浏览器和 Node.js 中操纵 JavaScript 日期提供了最全面、最简单、最一致的工具集。"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
