@@ -1,8 +1,8 @@
 <template>
   <div>
     <Button severity="secondary" @click="handleSwitchTheme">
-      <IconMoon v-if="isDark" :size="16" />
-      <IconSun v-else :size="16" />
+      <IconMoon v-if="isDark" :size="24" />
+      <IconSun v-else :size="24" />
     </Button>
   </div>
 </template>
