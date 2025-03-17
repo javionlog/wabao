@@ -27,5 +27,5 @@ logs
 .wrangler
 .dev.vars
 
-## Panda
-styled-system
+# auto generate
+server/assets/_locales

@@ -26,6 +26,3 @@ logs
 # wrangler files
 .wrangler
 .dev.vars
-
-## Panda
-styled-system

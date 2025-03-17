@@ -11,7 +11,8 @@ export default withNuxt({
     'assets',
     'public',
     'styled-system',
-    'worker-configuration.d.ts'
+    'worker-configuration.d.ts',
+    'server/assets/_locales'
   ],
   plugins: [
     {
