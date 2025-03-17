@@ -22,6 +22,51 @@
               "date_fns": {
                 "label": "date-fns",
                 "desc": "date-fns 为在浏览器和 Node.js 中操纵 JavaScript 日期提供了最全面、最简单、最一致的工具集。"
+              },
+              "motion": {
+                "label": "Motion",
+                "desc": "一个用于 JavaScript 和 React 的现代动画库"
+              },
+              "gsap": {
+                "label": "GSAP",
+                "desc": "GSAP - 为专业人士建立的一个非常健壮的 JavaScript 动画库"
+              },
+              "animejs": {
+                "label": "Anime.js",
+                "desc": "Anime.js 是一个轻量级的 JavaScript 动画库，具有简单而强大的 API。它可以处理 CSS 属性、 SVG、 DOM 属性和 JavaScript 对象。"
+              }
+            }
+          },
+          "vue": {
+            "label": "Vue",
+            "children": {
+              "vuejs": {
+                "label": "Vue.js",
+                "desc": "渐进式的 JavaScript 框架"
+              },
+              "vue_router": {
+                "label": "Vue Router",
+                "desc": "Vue.js 的官方路由"
+              },
+              "pinia": {
+                "label": "Pinia",
+                "desc": "符合直觉的 Vue.js 状态管理库"
+              },
+              "vue_i18n": {
+                "label": "Vue I18n",
+                "desc": "Vue I18n 是 Vue.js 的国际化插件"
+              },
+              "vueuse": {
+                "label": "VueUse",
+                "desc": "Vue.js 组合式 API 工具集合"
+              },
+              "vite_press": {
+                "label": "VitePress",
+                "desc": "Vite & Vue 静态站点生成器"
+              },
+              "nuxt": {
+                "label": "Nuxt",
+                "desc": "符合直觉的 Vue 框架"
               }
             }
           }

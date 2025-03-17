@@ -4,30 +4,30 @@
       <Tab v-for="tab in tabs" :key="tab.value" :value="tab.value">{{ tab.label }}</Tab>
     </TabList>
     <TabPanels>
-      <TabPanel v-for="tab in tabs" :key="tab.value" :value="tab.value">
+      <TabPanel v-for="tab in tabs" :key="tab.value" :value="tab.value" class="grid gap-8">
         <div v-for="cate in tab.children" :key="cate.value" class="tab-cate">
-          <div class="py-4 text-lg font-bold">{{ cate.label }}</div>
+          <div class="text-lg font-bold">{{ cate.label }}</div>
           <div class="tab-cate-box">
-            <div
+            <a
               v-for="item in cate.children"
               :key="item.value"
+              href="javascript:;"
               class="tab-cate-box-item shadow dark:shadow-slate-100/50"
+              @click="handleJump(item)"
             >
               <Avatar
                 :label="item.label"
-                size="xlarge"
-                shape="circle"
                 :pt="{
-                  root: {
-                    style: 'font-size: 1rem;flex-shrink:0;padding: 0.5rem 0.75rem;'
-                  },
                   label: {
                     style: 'word-break: break-all;'
                   }
                 }"
+                size="xlarge"
+                shape="circle"
+                class="shrink-0 px-3 py-2 text-[1rem]! leading-[1.25rem]"
               />
               <TextClamp :rows="3">{{ item.desc }}</TextClamp>
-            </div>
+            </a>
           </div>
         </div>
       </TabPanel>
@@ -55,6 +55,10 @@ type Props = {
 const { tabs } = defineProps<Props>()
 
 const activeTab = ref(tabs[0]?.value)
+
+const handleJump = (item: Tab) => {
+  window.open(item.url)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -62,6 +66,7 @@ const activeTab = ref(tabs[0]?.value)
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 1rem;
 
   &-item {
     display: flex;

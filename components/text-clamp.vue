@@ -22,15 +22,7 @@
   >
     <slot />
   </div>
-  <Popover
-    ref="pop"
-    :pt="{
-      root: {
-        style: 'max-width: 80%;'
-      }
-    }"
-    ><slot
-  /></Popover>
+  <Popover ref="pop" class="max-w-[80%]"><slot /></Popover>
 </template>
 
 <script setup lang="ts">
@@ -78,6 +70,7 @@ useResizeObserver(textRef, () => {
 
 const handleToggle = (event: Event) => {
   if (isOverflow.value && isMobile.value) {
+    event.stopPropagation()
     popRef.value?.toggle(event)
   }
 }
