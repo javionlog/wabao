@@ -10,7 +10,7 @@
     >
       <AppMenu @item-click="handleItemClick" />
     </Drawer>
-    <Button class="!fixed bottom-4 left-4" @click="handleToggle"><IconMenu :size="16" /></Button>
+    <Button class="fixed! bottom-4 left-4" @click="handleToggle"><IconMenu :size="16" /></Button>
   </div>
   <div v-else class="h-full w-full">
     <AppMenu />

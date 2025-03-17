@@ -18,6 +18,7 @@ onMounted(() => {
 
 const handleSwitchTheme = () => {
   document.documentElement.classList.toggle('app-dark')
-  theme.mode = theme.isDark ? 'light' : 'dark'
+  isDark.value = !isDark.value
+  theme.mode = isDark.value ? 'dark' : 'light'
 }
 </script>
