@@ -1,16 +1,12 @@
 <template>
   <Menu :model="items" class="h-full" v-bind="$attrs">
     <template #item="{ item, props }">
-      <RouterLink v-if="item.route" v-slot="{ href }" :to="item.route" custom>
+      <RouterLink v-slot="{ href }" :to="item.url ?? ''" custom>
         <a v-ripple :href="href" v-bind="props.action" @click.prevent="handleTo(item)">
           <component :is="item.ico" :size="16" />
-          <span class="ml-2">{{ item.label }}</span>
+          <span class="ml-2">{{ item.title }}</span>
         </a>
       </RouterLink>
-      <a v-else v-ripple :href="item.url" :target="item.target" v-bind="props.action">
-        <component :is="item.ico" :size="16" />
-        <span class="ml-2">{{ item.label }}</span>
-      </a>
     </template>
   </Menu>
 </template>
