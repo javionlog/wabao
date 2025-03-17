@@ -24,7 +24,7 @@
     "eslint": "eslint --fix **/*.{js,ts,vuex}",
     "prettier": "prettier --write **/*.{js,ts,vue,css,json,md}",
     "lint-staged": "lint-staged --config ./lint-staged.config.js",
-    "tsc": "tsc --noEmit --skipLibCheck"
+    "tsc": "vue-tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@primevue/forms": "^4.3.2",

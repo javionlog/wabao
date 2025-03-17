@@ -1,6 +1,5 @@
 type Mode = 'light' | 'dark' | null
 
-/** @ts-expect-error ignore tempority */
 export const useThemeStore = defineStore(
   'theme',
   () => {
