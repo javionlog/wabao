@@ -2,6 +2,8 @@ import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import tailwindcss from '@tailwindcss/vite'
 
+import { LOCALES } from './shared/constants'
+
 const MyPreset = definePreset(Aura, {
   semantic: {
     colorScheme: {
@@ -43,10 +45,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
   i18n: {
-    locales: [
-      { code: 'zh', iso: 'zh-CN', dir: 'ltr', label: '中文' },
-      { code: 'en', iso: 'en-US', dir: 'ltr', label: 'English' }
-    ],
+    locales: LOCALES,
     defaultLocale: 'en',
     translationDir: 'locales',
     meta: true,

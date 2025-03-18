@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-full items-center px-4">
-    <Logo @click="handleToHome" />
+    <Logo class="cursor-pointer" @click="handleToHome" />
     <div class="ml-auto flex items-center gap-2">
       <ToggleThemeButton />
       <SelectLocaleButton />

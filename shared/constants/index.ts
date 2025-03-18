@@ -8,3 +8,12 @@ export const SCREENS = {
 } as const
 
 export type Screen = keyof typeof SCREENS
+
+export const LOCALES = [
+  { code: 'zh', iso: 'zh-CN', dir: 'ltr', label: '中文' },
+  { code: 'en', iso: 'en-US', dir: 'ltr', label: 'English' }
+] as const
+
+export const LOCALE_CODES = LOCALES.map(o => o.code)
+
+export type LocaleCode = (typeof LOCALE_CODES)[number]
