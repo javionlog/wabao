@@ -39,7 +39,7 @@ const { rows = 1 } = defineProps<Props>()
 const { isMobile } = useScreens()
 const textRef = useTemplateRef('text')
 const popRef = useTemplateRef('pop')
-const { $getLocale } = useI18n()
+const { $getLocale } = useNuxtApp()
 
 const isOverflow = ref(false)
 

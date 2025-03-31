@@ -7,10 +7,9 @@
 <script setup lang="ts">
 const theme = useThemeStore()
 const isDark = usePreferredDark()
-const { t } = useI18n()
 const app = useNuxtApp()
 app.provide('getPageTitle', (title: string) => {
-  return `${title} - ${t('app.meta.title')}`
+  return `${title} - ${app.$t('app.meta.title')}`
 })
 
 onMounted(() => {

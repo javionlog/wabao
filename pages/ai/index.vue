@@ -3,10 +3,9 @@
 </template>
 
 <script setup lang="ts">
-const { $getPageTitle } = useNuxtApp()
-const { t } = useI18n()
+const { $getPageTitle, $t } = useNuxtApp()
 
-const title = computed(() => $getPageTitle(t('app.category.ai') as string))
+const title = computed(() => $getPageTitle($t('app.category.ai') as string))
 useHead({
   title
 })

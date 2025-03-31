@@ -16,7 +16,7 @@ import type { SelectChangeEvent } from 'primevue'
 
 import type { LocaleCode } from '@/shared/constants'
 
-const { $switchLocale, $getLocale, $getLocales } = useI18n()
+const { $switchLocale, $getLocale, $getLocales } = useNuxtApp()
 const locale = useLocaleStore()
 
 const activeLocale = ref($getLocale() as LocaleCode)

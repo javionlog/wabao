@@ -1,12 +1,12 @@
 <template>
   <Tabs v-model:value="activeTab">
     <TabList>
-      <Tab v-for="tab in tabs" :key="tab.value" :value="tab.value">{{ tab.label }}</Tab>
+      <Tab v-for="tab in tabs" :key="tab.value" :value="tab.value">{{ t(tab.label) }}</Tab>
     </TabList>
     <TabPanels>
       <TabPanel v-for="tab in tabs" :key="tab.value" :value="tab.value" class="grid gap-8">
         <div v-for="cate in tab.children" :key="cate.value" class="tab-cate">
-          <div class="text-lg font-bold">{{ cate.label }}</div>
+          <div class="text-lg font-bold">{{ t(cate.label) }}</div>
           <div class="tab-cate-box">
             <a
               v-for="item in cate.children"
@@ -16,7 +16,7 @@
               @click="handleJump(item)"
             >
               <Avatar
-                :label="item.label"
+                :label="t(item.label) as string"
                 :pt="{
                   label: {
                     style: 'word-break: break-all;'
@@ -26,7 +26,7 @@
                 shape="circle"
                 class="shrink-0 px-3 py-2 text-[1rem]! leading-[1.25rem]"
               />
-              <TextClamp :rows="3">{{ item.desc }}</TextClamp>
+              <TextClamp :rows="3">{{ t(item.desc as string) }}</TextClamp>
             </a>
           </div>
         </div>
@@ -53,6 +53,8 @@ type Props = {
 }
 
 const { tabs } = defineProps<Props>()
+
+const { t } = useI18n()
 
 const activeTab = ref(tabs[0]?.value)
 

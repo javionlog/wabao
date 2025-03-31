@@ -27,8 +27,11 @@ import LayoutSidebar from './layout-sidebar/index.vue'
 }
 
 .header {
+  z-index: 50;
   height: 4rem;
   position: sticky;
+  top: 0;
+  background: var(--p-content-background);
 }
 
 .main {

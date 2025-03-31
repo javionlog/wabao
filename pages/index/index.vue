@@ -1,12 +1,11 @@
 <template>
-  <div class="slogan">{{ t('home.common.label.slogan') }}</div>
+  <div class="slogan">{{ $t('home.common.label.slogan') }}</div>
 </template>
 
 <script setup lang="ts">
-const { $getPageTitle } = useNuxtApp()
-const { t } = useI18n()
+const { $getPageTitle, $t } = useNuxtApp()
 
-const title = computed(() => $getPageTitle(t('app.category.home') as string))
+const title = computed(() => $getPageTitle($t('app.category.home') as string))
 useHead({
   title
 })
