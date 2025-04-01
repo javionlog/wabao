@@ -6,7 +6,10 @@
     <TabPanels>
       <TabPanel v-for="tab in tabs" :key="tab.value" :value="tab.value" class="grid gap-8">
         <div v-for="cate in tab.children" :key="cate.value" class="tab-cate">
-          <div class="text-lg font-bold">{{ t(cate.label) }}</div>
+          <div class="flex items-center gap-2 text-lg font-bold">
+            <div class="h-4 w-1 bg-[var(--p-primary-color)]" />
+            <div>{{ t(cate.label) }}</div>
+          </div>
           <div class="tab-cate-box">
             <a
               v-for="item in cate.children"
@@ -16,16 +19,17 @@
               @click="handleJump(item)"
             >
               <Avatar
-                :label="t(item.label) as string"
                 :pt="{
                   label: {
-                    style: 'word-break: break-all;'
+                    style: 'overflow: hidden; white-space: nowrap; text-overflow: ellipsis;'
                   }
                 }"
                 size="xlarge"
                 shape="circle"
                 class="shrink-0 px-3 py-2 text-[1rem]! leading-[1.25rem]"
-              />
+              >
+                <TextClamp>{{ t(item.label) }}</TextClamp>
+              </Avatar>
               <TextClamp :rows="3">{{ t(item.desc as string) }}</TextClamp>
             </a>
           </div>
