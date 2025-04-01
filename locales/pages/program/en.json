@@ -118,7 +118,7 @@
               },
               "orillusion": {
                 "label": "Orillusion",
-                "desc": "Orillusion 引擎是一款完全支持 WebGPU 标准的轻量级渲染引擎。基于最新的 Web 图形API标准，我们做了大量的探索和尝试，实现了很多曾经在 Web 中很难实现或者根本实现不了的技术和功能。"
+                "desc": "Orillusion engine is a lightweight rendering engine that fully supports the WebGPU standard. Based on the latest Web graphics API standard, we have made a lot of exploration and attempts to implement many techniques and functions that were previously difficult or impossible to achieve on the web."
               }
             }
           },

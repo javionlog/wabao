@@ -12,7 +12,7 @@
     </Drawer>
     <Button class="fixed! bottom-4 left-4" @click="handleToggle"><IconMenu :size="16" /></Button>
   </div>
-  <div v-else class="h-full w-full">
+  <div v-else class="h-[calc(100vh - 5rem)] sticky top-[5rem] w-full">
     <AppMenu />
   </div>
 </template>
